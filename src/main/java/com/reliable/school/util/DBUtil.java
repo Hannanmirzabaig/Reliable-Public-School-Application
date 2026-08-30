@@ -6,9 +6,30 @@ import java.sql.SQLException;
 
 public class DBUtil {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/reliable_school";
-    private static final String USER = "root";
-    private static final String PASSWORD = "root";
+    private static final String URL = getEnv(
+            "DB_URL",
+            "jdbc:mysql://localhost:3306/reliable_school"
+    );
+
+    private static final String USER = getEnv(
+            "DB_USER",
+            "root"
+    );
+
+    private static final String PASSWORD = getEnv(
+            "DB_PASSWORD",
+            "root"
+    );
+
+    private static String getEnv(String key, String defaultValue) {
+        String value = System.getenv(key);
+
+        if (value == null || value.isBlank()) {
+            return defaultValue;
+        }
+
+        return value;
+    }
 
     public static Connection getConnection() {
 
@@ -35,3 +56,4 @@ public class DBUtil {
         return connection;
     }
 }
+
