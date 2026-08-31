@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Notice - Reliable Public School</title>
+    <title>Add Notice - Modern Life Public School</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -191,7 +191,7 @@
 
 <header>
     <div class="logo">
-        Reliable <span>Public School</span>
+        Modern Life <span>Public School</span>
     </div>
     <div class="admin-badge">
         <i class="fas fa-user-shield"></i>
@@ -257,7 +257,7 @@
 </div>
 
 <footer>
-    <p>© 2026 Reliable Public School. All Rights Reserved.</p>
+    <p>© 2026 Modern Life Public School. All Rights Reserved.</p>
 </footer>
 
 </body>

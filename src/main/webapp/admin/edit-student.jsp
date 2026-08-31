@@ -12,7 +12,7 @@ pageEncoding="UTF-8"%>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Edit Student - Reliable Public School</title>
+<title>Edit Student - Modern Life Public School</title>
 
 <style>
 
@@ -140,7 +140,6 @@ input {
 
 <div class="container">
 
-```
 <div class="box">
 
     <h1>
@@ -355,7 +354,7 @@ input {
     %>
 
 </div>
-```
+
 
 </div>
 

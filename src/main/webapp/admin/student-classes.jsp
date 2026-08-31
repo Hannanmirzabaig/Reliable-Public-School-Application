@@ -12,7 +12,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Student Details - Reliable Public School</title>
+    <title>Student Details - Modern Life Public School</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -444,7 +444,7 @@
                 <i class="fas fa-school"></i>
             </div>
 
-            Reliable <span>Public School</span>
+            Modern Life <span>Public School</span>
 
         </div>
 
@@ -735,95 +735,6 @@
 
             </a>
 
-
-            <!-- CLASS 9 -->
-
-            <a href="${pageContext.request.contextPath}/student-details?action=students&className=9"
-               class="class-card">
-
-                <i class="fas fa-chevron-right card-arrow"></i>
-
-                <div class="class-icon">
-                    📚
-                </div>
-
-                <h2>
-                    Class 9
-                </h2>
-
-                <p>
-                    View Students
-                </p>
-
-            </a>
-
-
-            <!-- CLASS 10 -->
-
-            <a href="${pageContext.request.contextPath}/student-details?action=students&className=10"
-               class="class-card">
-
-                <i class="fas fa-chevron-right card-arrow"></i>
-
-                <div class="class-icon">
-                    📚
-                </div>
-
-                <h2>
-                    Class 10
-                </h2>
-
-                <p>
-                    View Students
-                </p>
-
-            </a>
-
-
-            <!-- CLASS 11 -->
-
-            <a href="${pageContext.request.contextPath}/student-details?action=students&className=11"
-               class="class-card">
-
-                <i class="fas fa-chevron-right card-arrow"></i>
-
-                <div class="class-icon">
-                    📚
-                </div>
-
-                <h2>
-                    Class 11
-                </h2>
-
-                <p>
-                    View Students
-                </p>
-
-            </a>
-
-
-            <!-- CLASS 12 -->
-
-            <a href="${pageContext.request.contextPath}/student-details?action=students&className=12"
-               class="class-card">
-
-                <i class="fas fa-chevron-right card-arrow"></i>
-
-                <div class="class-icon">
-                    📚
-                </div>
-
-                <h2>
-                    Class 12
-                </h2>
-
-                <p>
-                    View Students
-                </p>
-
-            </a>
-
-
         </div>
 
     </div>
@@ -836,7 +747,7 @@
     <footer>
 
         <p>
-            © 2026 Reliable Public School. All Rights Reserved.
+            © 2026 Modern Life Public School. All Rights Reserved.
         </p>
 
     </footer>

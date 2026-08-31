@@ -2,23 +2,23 @@
 pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Reliable Public School</title>
+<title>Modern Life Public School</title>
 
 <!-- Google Fonts -->
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
 
 /* ================= RESET ================= */
-
 * {
     margin: 0;
     padding: 0;
@@ -42,9 +42,7 @@ img {
     display: block;
 }
 
-
 /* ================= TOP NOTICE BAR ================= */
-
 .top-bar {
     background: #8b171c;
     color: white;
@@ -87,24 +85,15 @@ img {
 }
 
 @keyframes marquee {
-
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-100%);
-    }
-
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
 }
 
-
 /* ================= HEADER ================= */
-
 header {
     background: #ffffff;
-    height: 88px;
-    padding: 0 6%;
+    min-height: 88px;
+    padding: 0 5%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -115,60 +104,63 @@ header {
     box-shadow: 0 3px 15px rgba(0,0,0,.07);
 }
 
-
 /* ================= LOGO ================= */
-
 .logo {
     display: flex;
     align-items: center;
     gap: 12px;
     text-decoration: none;
     color: #122b4d;
+    flex-shrink: 0;
 }
 
 .logo-icon {
-    width: 52px;
-    height: 52px;
+    width: 58px;
+    height: 58px;
     border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #f1d8d9;
     background: #8b171c;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 23px;
-    font-weight: 700;
-    border: 4px solid #f1d8d9;
+    flex-shrink: 0;
+}
+
+.logo-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .logo-text {
     display: flex;
     flex-direction: column;
-    line-height: 1.1;
+    line-height: 1.15;
 }
 
 .logo-text strong {
-    font-size: 21px;
+    font-size: 20px;
     color: #8b171c;
     font-weight: 700;
+    white-space: nowrap;
 }
 
 .logo-text span {
     font-size: 11px;
     color: #777;
-    letter-spacing: 1.8px;
+    letter-spacing: 1.4px;
     text-transform: uppercase;
+    white-space: nowrap;
 }
 
-
 /* ================= NAVIGATION ================= */
-
 nav {
     display: flex;
     align-items: center;
     gap: 3px;
 }
 
-nav a {
+nav > a,
+.dropdown > .dropbtn {
     color: #333;
     text-decoration: none;
     padding: 11px 15px;
@@ -176,9 +168,15 @@ nav a {
     font-weight: 500;
     transition: .3s;
     position: relative;
+    background: transparent;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    white-space: nowrap;
 }
 
-nav a::after {
+nav > a::after,
+.dropdown > .dropbtn::after {
     content: "";
     position: absolute;
     bottom: 3px;
@@ -189,51 +187,117 @@ nav a::after {
     transition: .3s;
 }
 
-nav a:hover {
+nav > a:hover,
+.dropdown:hover > .dropbtn {
     color: #8b171c;
 }
 
-nav a:hover::after {
+nav > a:hover::after,
+.dropdown:hover > .dropbtn::after {
     width: calc(100% - 30px);
 }
 
-.nav-admission {
-    background: #8b171c;
+nav > a.active,
+.dropdown > .dropbtn.active {
+    color: #8b171c;
+}
+
+nav > a.active::after,
+.dropdown > .dropbtn.active::after {
+    width: calc(100% - 30px);
+}
+
+/* ================= ADMISSIONS DROPDOWN ================= */
+.dropdown {
+    position: relative;
+}
+
+.dropbtn i {
+    font-size: 11px;
+    margin-left: 5px;
+    transition: .3s;
+}
+
+.dropdown:hover .dropbtn i {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    min-width: 235px;
+    background: white;
+    border-top: 3px solid #8b171c;
+    box-shadow: 0 12px 30px rgba(0,0,0,.15);
+    border-radius: 0 0 5px 5px;
+    padding: 8px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: .25s ease;
+    z-index: 2000;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu a {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    color: #333;
+    text-decoration: none;
+    padding: 12px 18px;
+    font-size: 13.5px;
+    font-weight: 500;
+    transition: .25s;
+    white-space: nowrap;
+}
+
+.dropdown-menu a i {
+    width: 18px;
+    color: #8b171c;
+    font-size: 14px;
+}
+
+.dropdown-menu a:hover {
+    background: #f8eeee;
+    color: #8b171c;
+    padding-left: 23px;
+}
+
+/* ================= APPLY NOW ================= */
+.nav-apply {
+    background: #8b171c !important;
     color: white !important;
     border-radius: 4px;
     margin-left: 8px;
-    padding: 11px 20px;
+    padding: 11px 20px !important;
 }
 
-.nav-admission:hover {
-    background: #651014;
+.nav-apply:hover {
+    background: #651014 !important;
 }
 
-.nav-admission::after {
-    display: none;
+.nav-apply::after {
+    display: none !important;
 }
-
 
 /* ================= HERO ================= */
-
 .hero {
     min-height: 650px;
-
     background:
-        linear-gradient(
-            rgba(8, 27, 49, .60),
-            rgba(8, 27, 49, .70)
-        ),
+        linear-gradient(rgba(8, 27, 49, .60), rgba(8, 27, 49, .70)),
         url("https://images.unsplash.com/photo-1580582932707-520aed937b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80")
         center/cover no-repeat;
-
     display: flex;
     align-items: center;
     position: relative;
 }
-
-
-/* Decorative bottom shape */
 
 .hero::after {
     content: "";
@@ -243,16 +307,7 @@ nav a:hover::after {
     width: 100%;
     height: 80px;
     background: white;
-    clip-path: polygon(
-        0 70%,
-        20% 45%,
-        40% 65%,
-        60% 35%,
-        80% 55%,
-        100% 25%,
-        100% 100%,
-        0 100%
-    );
+    clip-path: polygon(0 70%, 20% 45%, 40% 65%, 60% 35%, 80% 55%, 100% 25%, 100% 100%, 0 100%);
 }
 
 .hero-content {
@@ -277,21 +332,19 @@ nav a:hover::after {
 .hero h1 {
     max-width: 850px;
     font-family: 'Playfair Display', serif;
-    font-size: 62px;
+    font-size: 58px;
     line-height: 1.15;
     margin-bottom: 20px;
 }
 
 .hero p {
     max-width: 700px;
-    font-size: 19px;
+    font-size: 18px;
     opacity: .95;
     margin-bottom: 35px;
 }
 
-
 /* ================= BUTTONS ================= */
-
 .btn {
     display: inline-block;
     background: #8b171c;
@@ -322,11 +375,9 @@ nav a:hover::after {
     color: #8b171c;
 }
 
-
 /* ================= COMMON SECTION ================= */
-
 .section {
-    padding: 90px 6%;
+    padding: 90px 5%;
 }
 
 .section-header {
@@ -347,7 +398,7 @@ nav a:hover::after {
 .section-title {
     color: #152d4b;
     font-family: 'Playfair Display', serif;
-    font-size: 42px;
+    font-size: 40px;
     line-height: 1.2;
     margin-bottom: 18px;
 }
@@ -358,9 +409,7 @@ nav a:hover::after {
     line-height: 1.9;
 }
 
-
 /* ================= ABOUT ================= */
-
 .about-section {
     background: #ffffff;
 }
@@ -370,7 +419,7 @@ nav a:hover::after {
     margin: auto;
     display: grid;
     grid-template-columns: 1.05fr .95fr;
-    gap: 65px;
+    gap: 60px;
     align-items: center;
 }
 
@@ -419,9 +468,7 @@ nav a:hover::after {
     line-height: 1.9;
 }
 
-
 /* ================= WHY CHOOSE ================= */
-
 .why-section {
     background: #f6f7f9;
 }
@@ -472,9 +519,7 @@ nav a:hover::after {
     line-height: 1.7;
 }
 
-
 /* ================= SCHOOL LIFE ================= */
-
 .school-life {
     background: white;
 }
@@ -516,7 +561,7 @@ nav a:hover::after {
 .image-card-content h3 {
     color: #152d4b;
     font-family: 'Playfair Display', serif;
-    font-size: 23px;
+    font-size: 22px;
     margin-bottom: 8px;
 }
 
@@ -526,9 +571,7 @@ nav a:hover::after {
     line-height: 1.7;
 }
 
-
 /* ================= NOTICE ================= */
-
 .notice-section {
     background: #f5f6f8;
 }
@@ -567,9 +610,7 @@ nav a:hover::after {
     font-size: 14px;
 }
 
-
 /* ================= CONTACT ================= */
-
 .contact-section {
     background: white;
 }
@@ -605,18 +646,12 @@ nav a:hover::after {
     font-size: 14px;
 }
 
-
 /* ================= CTA ================= */
-
 .cta {
     background:
-        linear-gradient(
-            rgba(21,45,75,.93),
-            rgba(21,45,75,.93)
-        ),
+        linear-gradient(rgba(21,45,75,.93), rgba(21,45,75,.93)),
         url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1600&q=80")
         center/cover;
-
     color: white;
     text-align: center;
     padding: 80px 20px;
@@ -624,7 +659,7 @@ nav a:hover::after {
 
 .cta h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 42px;
+    font-size: 40px;
     margin-bottom: 15px;
 }
 
@@ -633,13 +668,11 @@ nav a:hover::after {
     margin-bottom: 25px;
 }
 
-
 /* ================= FOOTER ================= */
-
 footer {
     background: #0c1d31;
     color: white;
-    padding: 45px 6% 25px;
+    padding: 45px 5% 25px;
 }
 
 .footer-content {
@@ -674,10 +707,12 @@ footer {
     text-decoration: none;
     font-size: 14px;
     margin-bottom: 8px;
+    transition: .3s;
 }
 
 .footer-column a:hover {
     color: white;
+    padding-left: 4px;
 }
 
 .footer-bottom {
@@ -690,16 +725,10 @@ footer {
     font-size: 13px;
 }
 
-
 /* ================= MOBILE ================= */
-
 @media(max-width: 1000px) {
-
-    nav {
-        gap: 0;
-    }
-
-    nav a {
+    nav > a,
+    .dropdown > .dropbtn {
         padding: 9px 8px;
         font-size: 12px;
     }
@@ -709,9 +738,12 @@ footer {
     }
 
     .hero h1 {
-        font-size: 48px;
+        font-size: 46px;
     }
 
+    .image-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media(max-width: 768px) {
@@ -726,36 +758,67 @@ footer {
     }
 
     header {
-        height: auto;
-        padding: 15px 5%;
+        min-height: auto;
+        padding: 12px 4%;
         flex-direction: column;
-        gap: 15px;
+        gap: 12px;
+    }
+
+    .logo {
+        justify-content: center;
+    }
+
+    .logo-text strong {
+        font-size: 18px;
+    }
+
+    .logo-text span {
+        font-size: 10px;
+        letter-spacing: 1px;
     }
 
     nav {
         flex-wrap: wrap;
         justify-content: center;
+        gap: 3px;
     }
 
-    nav a {
+    nav > a,
+    .dropdown > .dropbtn {
         padding: 7px 8px;
         font-size: 12px;
     }
 
-    .nav-admission {
+    .nav-apply {
         margin-left: 0;
     }
 
+    .dropdown {
+        position: static;
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 8px);
+        min-width: 220px;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        transform: translate(-50%, 0);
+    }
+
     .hero {
-        min-height: 560px;
+        min-height: 520px;
     }
 
     .hero-content {
         text-align: center;
+        padding: 60px 0;
     }
 
     .hero h1 {
-        font-size: 38px;
+        font-size: 34px;
     }
 
     .hero p {
@@ -763,20 +826,20 @@ footer {
     }
 
     .section {
-        padding: 65px 5%;
+        padding: 60px 4%;
     }
 
     .section-title {
-        font-size: 34px;
+        font-size: 32px;
     }
 
     .about {
         grid-template-columns: 1fr;
-        gap: 45px;
+        gap: 40px;
     }
 
     .about-image img {
-        height: 330px;
+        height: 300px;
     }
 
     .cards {
@@ -797,670 +860,306 @@ footer {
     }
 
     .cta h2 {
-        font-size: 32px;
+        font-size: 30px;
     }
-
 }
 
 </style>
-
 </head>
 
 <body>
 
 <!-- ================= TOP RUNNING LINE ================= -->
-
 <div class="top-bar">
-
-
-<div class="top-label">
-    IMPORTANT
-</div>
-
-<div class="marquee-wrapper">
-
-    <div class="marquee">
-
-        <span>
-            Welcome to Reliable Public School — Quality Education • Strong Values • Bright Future
-        </span>
-
-        <span>
-            Admissions are open — Visit our school for more information
-        </span>
-
-        <span>
-            Stay connected with Reliable Public School for latest notices and updates
-        </span>
-
+    <div class="top-label">IMPORTANT</div>
+    <div class="marquee-wrapper">
+        <div class="marquee">
+            <span>Welcome to Modern Life Public School — Quality Education • Strong Values • Bright Future</span>
+            <span>Admissions are open — Visit our school for more information</span>
+            <span>Stay connected with Modern Life Public School for latest notices and updates</span>
+        </div>
     </div>
-
-</div>
-
-
 </div>
 
 <!-- ================= HEADER ================= -->
-
 <header>
-
-<a href="${pageContext.request.contextPath}/index.jsp"
-   class="logo">
-
-    <div class="logo-icon">
-        R
-    </div>
-
-    <div class="logo-text">
-
-        <strong>Reliable Public School</strong>
-
-        <span>Education • Excellence • Values</span>
-
-    </div>
-
-</a>
-
-
-<nav>
-
-    <a href="${pageContext.request.contextPath}/index.jsp">
-        Home
+    <a href="${pageContext.request.contextPath}/index.jsp" class="logo">
+        <div class="logo-icon">
+            <img src="${pageContext.request.contextPath}/images/logo.jpeg" alt="Logo">
+        </div>
+        <div class="logo-text">
+            <strong>Modern Life Public School</strong>
+            <span>Education • Excellence • Values</span>
+        </div>
     </a>
 
-    <a href="${pageContext.request.contextPath}/about.jsp">
-        About
-    </a>
+    <nav>
+        <a href="${pageContext.request.contextPath}/index.jsp" class="active">Home</a>
+        <a href="${pageContext.request.contextPath}/about.jsp">About</a>
+        <a href="${pageContext.request.contextPath}/academics.jsp">Academics</a>
 
-    <a href="${pageContext.request.contextPath}/academics.jsp">
-        Academics
-    </a>
+        <!-- ================= ADMISSIONS DROPDOWN ================= -->
+        <div class="dropdown">
+            <button class="dropbtn" type="button">
+                Admissions
+                <i class="fas fa-chevron-down"></i>
+            </button>
 
-    <a href="${pageContext.request.contextPath}/admissions.jsp">
-        Admissions
-    </a>
+            <div class="dropdown-menu">
+                <a href="https://wa.me/918433220079?text=Hello%20Modern%20Life%20Public%20School,%20I%20want%20to%20know%20about%20admission"
+                   target="_blank">
+                    <i class="fas fa-paper-plane"></i>
+                    <span>Apply For Admission</span>
+                </a>
 
-    <a href="${pageContext.request.contextPath}/notice?action=public">
-        Notice
-    </a>
+                <a href="${pageContext.request.contextPath}/admissions.jsp#process">
+                    <i class="fas fa-list-check"></i>
+                    <span>Admission Process</span>
+                </a>
 
-   <!--   <a href="${pageContext.request.contextPath}/gallery.jsp">
-        Gallery
-    </a>
-    -->
+                <a href="${pageContext.request.contextPath}/admissions.jsp#scholarships">
+                    <i class="fas fa-award"></i>
+                    <span>Scholarships</span>
+                </a>
+            </div>
+        </div>
 
-    <a href="${pageContext.request.contextPath}/contact.jsp">
-        Contact
-    </a>
+        <a href="${pageContext.request.contextPath}/notice?action=public">Notice</a>
+        <a href="${pageContext.request.contextPath}/contact.jsp">Contact</a>
 
-    <a href="${pageContext.request.contextPath}/admissions.jsp"
-       class="nav-admission">
-        Apply Now
-    </a>
-
-</nav>
-
+        <a class="nav-apply"
+           href="https://wa.me/918433220079?text=Hello%20Modern%20Life%20Public%20School,%20I%20want%20to%20apply%20for%20admission"
+           target="_blank">
+            Apply Now
+        </a>
+    </nav>
 </header>
 
 <!-- ================= HERO ================= -->
 <section class="hero">
-
-<div class="hero-content">
-
-    <div class="hero-small">
-        Welcome to Reliable Public School
+    <div class="hero-content">
+        <div class="hero-small">Welcome to Modern Life Public School</div>
+        <h1>Shaping Young Minds for a Brighter Future</h1>
+        <p>A nurturing learning environment where students grow with knowledge, confidence, discipline and values.</p>
+        <a href="${pageContext.request.contextPath}/about.jsp" class="btn">Explore School</a>
+        <a href="${pageContext.request.contextPath}/admissions.jsp" class="btn btn-outline">Admissions</a>
     </div>
-
-    <h1>
-        Shaping Young Minds for a Brighter Future
-    </h1>
-
-    <p>
-        A nurturing learning environment where students
-        grow with knowledge, confidence, discipline and values.
-    </p>
-
-    <a href="about.jsp" class="btn">
-        Explore School
-    </a>
-
-    <a href="admissions.jsp" class="btn btn-outline">
-        Admissions
-    </a>
-
-</div>
-
-
 </section>
 
 <!-- ================= ABOUT ================= -->
-
 <section class="section about-section">
-
-<div class="section-header">
-
-    <div class="section-label">
-        About Our School
-    </div>
-
-    <h2 class="section-title">
-        Welcome to Reliable Public School
-    </h2>
-
-    <p class="section-text">
-        Reliable Public School is committed to providing
-        quality education in a safe, supportive and inspiring
-        environment where every student can learn, grow and
-        achieve their goals.
-    </p>
-
-</div>
-
-
-<div class="about">
-
-    <div class="about-image">
-
-        <img
-        src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-        alt="Reliable Public School Students">
-
-    </div>
-
-
-    <div class="about-content">
-
-        <h3>
-            Building a Better Future
-        </h3>
-
-        <p>
-            Our school focuses on academic excellence,
-            discipline, creativity and overall development.
-            We encourage students to participate in educational,
-            cultural and sports activities.
+    <div class="section-header">
+        <div class="section-label">About Our School</div>
+        <h2 class="section-title">Welcome to Modern Life Public School</h2>
+        <p class="section-text">
+            Modern Life Public School is committed to providing quality education in a safe, supportive and inspiring environment where every student can learn, grow and achieve their goals.
         </p>
-
-        <p>
-            With dedicated teachers and a positive learning
-            environment, we aim to help every student discover
-            their potential and become confident individuals.
-        </p>
-
-        <a href="about.jsp" class="btn">
-            Read More
-        </a>
-
     </div>
 
-</div>
-
-
+    <div class="about">
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Modern Life Public School Students">
+        </div>
+        <div class="about-content">
+            <h3>Building a Better Future</h3>
+            <p>Our school focuses on academic excellence, discipline, creativity and overall development. We encourage students to participate in educational, cultural and sports activities.</p>
+            <p>With dedicated teachers and a positive learning environment, we aim to help every student discover their potential and become confident individuals.</p>
+            <a href="${pageContext.request.contextPath}/about.jsp" class="btn">Read More</a>
+        </div>
+    </div>
 </section>
 
 <!-- ================= WHY CHOOSE US ================= -->
-
 <section class="section why-section">
-
-
-<div class="section-header">
-
-    <div class="section-label">
-        Our Strengths
+    <div class="section-header">
+        <div class="section-label">Our Strengths</div>
+        <h2 class="section-title">Why Choose Modern Life Public School?</h2>
+        <p class="section-text">We provide students with the right environment to develop knowledge, confidence and strong values.</p>
     </div>
 
-    <h2 class="section-title">
-        Why Choose Reliable Public School?
-    </h2>
-
-    <p class="section-text">
-        We provide students with the right environment
-        to develop knowledge, confidence and strong values.
-    </p>
-
-</div>
-
-
-<div class="cards">
-
-
-    <div class="card">
-
-        <div class="card-icon">
-            📚
+    <div class="cards">
+        <div class="card">
+            <div class="card-icon">📚</div>
+            <h3>Quality Education</h3>
+            <p>Strong academic foundations with student-focused learning and guidance.</p>
         </div>
-
-        <h3>
-            Quality Education
-        </h3>
-
-        <p>
-            Strong academic foundations with
-            student-focused learning and guidance.
-        </p>
-
-    </div>
-
-
-    <div class="card">
-
-        <div class="card-icon">
-            👨‍🏫
+        <div class="card">
+            <div class="card-icon">👨‍🏫</div>
+            <h3>Experienced Teachers</h3>
+            <p>Dedicated teachers who guide students towards knowledge and success.</p>
         </div>
-
-        <h3>
-            Experienced Teachers
-        </h3>
-
-        <p>
-            Dedicated teachers who guide students
-            towards knowledge and success.
-        </p>
-
-    </div>
-
-
-    <div class="card">
-
-        <div class="card-icon">
-            🛡️
+        <div class="card">
+            <div class="card-icon">🛡️</div>
+            <h3>Safe Environment</h3>
+            <p>A safe, friendly and positive environment for every student.</p>
         </div>
-
-        <h3>
-            Safe Environment
-        </h3>
-
-        <p>
-            A safe, friendly and positive environment
-            for every student.
-        </p>
-
-    </div>
-
-
-    <div class="card">
-
-        <div class="card-icon">
-            🌟
+        <div class="card">
+            <div class="card-icon">🌟</div>
+            <h3>Overall Development</h3>
+            <p>Focus on academics, sports, culture and creative activities.</p>
         </div>
-
-        <h3>
-            Overall Development
-        </h3>
-
-        <p>
-            Focus on academics, sports, culture
-            and creative activities.
-        </p>
-
     </div>
-
-
-</div>
-
 </section>
 
 <!-- ================= SCHOOL LIFE ================= -->
-
 <section class="section school-life">
-
-<div class="section-header">
-
-    <div class="section-label">
-        Life At School
+    <div class="section-header">
+        <div class="section-label">Life At School</div>
+        <h2 class="section-title">Learning Beyond Classrooms</h2>
+        <p class="section-text">School life at Modern Life Public School encourages curiosity, creativity, teamwork and confidence.</p>
     </div>
 
-    <h2 class="section-title">
-        Learning Beyond Classrooms
-    </h2>
+    <div class="image-cards">
 
-    <p class="section-text">
-        School life at Reliable Public School encourages
-        curiosity, creativity, teamwork and confidence.
-    </p>
-
-</div>
-
-
-<div class="image-cards">
-
-
-    <div class="image-card">
-
-        <div class="image-card-image">
-
-            <img
-            src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-            alt="Classroom">
-
+        <div class="image-card">
+            <div class="image-card-image">
+                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Classroom">
+            </div>
+            <div class="image-card-content">
+                <h3>Smart Learning</h3>
+                <p>Interactive and engaging classroom learning experiences.</p>
+            </div>
         </div>
 
-        <div class="image-card-content">
-
-            <h3>
-                Smart Learning
-            </h3>
-
-            <p>
-                Interactive and engaging classroom
-                learning experiences.
-            </p>
-
+        <div class="image-card">
+            <div class="image-card-image">
+                <img src="${pageContext.request.contextPath}/images/school1.jpeg" alt="School Campus">
+            </div>
+            <div class="image-card-content">
+                <h3>Family & Community</h3>
+                <p>Memorable moments where students and families come together to celebrate, connect and enjoy school life.</p>
+            </div>
         </div>
 
-    </div>
-
-
-
-    <div class="image-card">
-
-        <div class="image-card-image">
-
-            <img
-            src="https://images.unsplash.com/photo-1577896851221-b593f1b54ac0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-            alt="School Activity">
-
+        <div class="image-card">
+            <div class="image-card-image">
+                <img src="${pageContext.request.contextPath}/images/school2.jpeg" alt="School Campus">
+            </div>
+            <div class="image-card-content">
+                <h3>Family Event</h3>
+                <p>A welcoming environment where students, parents and families come together to celebrate learning and school life.</p>
+            </div>
         </div>
 
-        <div class="image-card-content">
+        <div class="image-card">
+            <div class="image-card-image">
+                <img src="${pageContext.request.contextPath}/images/school5.jpeg" alt="School Campus">
+            </div>
+            <div class="image-card-content">
+                <h3>Awards & Achievements</h3>
+                <p>Recognizing our students' achievements and celebrating their hard work, talent and dedication.</p>
+            </div>
+        </div>
 
-            <h3>
-                Activities
-            </h3>
+        <div class="image-card">
+            <div class="image-card-image">
+                <img src="${pageContext.request.contextPath}/images/school4.jpeg" alt="School Campus">
+            </div>
+            <div class="image-card-content">
+                <h3>Our Dedicated Teachers</h3>
+                <p>Our dedicated teachers work together to guide, support and inspire students throughout their learning journey.</p>
+            </div>
+        </div>
 
-            <p>
-                Students participate in cultural,
-                sports and creative activities.
-            </p>
-
+        <div class="image-card">
+            <div class="image-card-image">
+                <img src="${pageContext.request.contextPath}/images/school.jpeg" alt="School Campus">
+            </div>
+            <div class="image-card-content">
+                <h3>Celebrating Our Students</h3>
+                <p>Encouraging and appreciating our students by celebrating their achievements and creating joyful memories together.</p>
+            </div>
         </div>
 
     </div>
-
-
-
-    <div class="image-card">
-
-        <div class="image-card-image">
-
-            <img
-            src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-            alt="School Campus">
-
-        </div>
-
-        <div class="image-card-content">
-
-            <h3>
-                School Campus
-            </h3>
-
-            <p>
-                A positive environment designed
-                for learning and growth.
-            </p>
-
-        </div>
-
-    </div>
-
-
-</div>
-
-
 </section>
 
 <!-- ================= NOTICE ================= -->
-
 <section class="section notice-section">
-
-
-<div class="section-header">
-
-    <div class="section-label">
-        Stay Updated
+    <div class="section-header">
+        <div class="section-label">Stay Updated</div>
+        <h2 class="section-title">Latest Notices</h2>
+        <p class="section-text">Stay updated with the latest announcements from Modern Life Public School.</p>
     </div>
 
-    <h2 class="section-title">
-        Latest Notices
-    </h2>
-
-    <p class="section-text">
-        Stay updated with the latest announcements
-        from Reliable Public School.
-    </p>
-
-</div>
-
-
-<div class="notice-wrapper">
-
-    <div class="notice-box">
-
-        <div class="notice-date">
-            School Updates
+    <div class="notice-wrapper">
+        <div class="notice-box">
+            <div class="notice-date">School Updates</div>
+            <h3>Visit Our Notice Board</h3>
+            <p>Check the latest school announcements, examination information, events and important updates.</p>
         </div>
-
-        <h3>
-            Visit Our Notice Board
-        </h3>
-
-        <p>
-            Check the latest school announcements,
-            examination information, events and
-            important updates.
-        </p>
-
+        <div style="text-align:center; margin-top:30px;">
+            <a href="${pageContext.request.contextPath}/notice?action=public" class="btn">View All Notices</a>
+        </div>
     </div>
-
-
-    <div style="text-align:center; margin-top:30px;">
-
-        <a href="${pageContext.request.contextPath}/notice?action=public"
-           class="btn">
-
-            View All Notices
-
-        </a>
-
-    </div>
-
-</div>
-
-
 </section>
 
 <!-- ================= CONTACT ================= -->
-
 <section class="section contact-section">
-
-
-<div class="section-header">
-
-    <div class="section-label">
-        Get In Touch
+    <div class="section-header">
+        <div class="section-label">Get In Touch</div>
+        <h2 class="section-title">Contact Us</h2>
+        <p class="section-text">Have questions? Feel free to contact Modern Life Public School.</p>
     </div>
 
-    <h2 class="section-title">
-        Contact Us
-    </h2>
-
-    <p class="section-text">
-        Have questions? Feel free to contact
-        Reliable Public School.
-    </p>
-
-</div>
-
-
-<div class="contact-box">
-
-
-    <div class="contact-item">
-
-        <div class="contact-icon">
-            📍
+    <div class="contact-box">
+        <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <h3>Address</h3>
+            <p>Mohalla Chaudhriyan, Qasba Jhalu, Bijnor, Uttar Pradesh</p>
         </div>
-
-        <h3>
-            Address
-        </h3>
-
-        <p>
-            Reliable Public School
-        </p>
-
-    </div>
-
-
-
-    <div class="contact-item">
-
-        <div class="contact-icon">
-            📞
+        <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <h3>Phone</h3>
+            <p>+91 8433220079</p>
         </div>
-
-        <h3>
-            Phone
-        </h3>
-
-        <p>
-            +91 XXXXX XXXXX
-        </p>
-
-    </div>
-
-
-
-    <div class="contact-item">
-
-        <div class="contact-icon">
-            ✉️
+        <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <h3>Email</h3>
+            <p>info@modernlifepublicschool.com</p>
         </div>
-
-        <h3>
-            Email
-        </h3>
-
-        <p>
-            info@reliablepublicschool.com
-        </p>
-
     </div>
 
-
-</div>
-
-
-<div style="text-align:center; margin-top:35px;">
-
-    <a href="contact.jsp" class="btn">
-        Contact Us
-    </a>
-
-</div>
-
-
+    <div style="text-align:center; margin-top:35px;">
+        <a href="${pageContext.request.contextPath}/contact.jsp" class="btn">Contact Us</a>
+    </div>
 </section>
 
 <!-- ================= ADMISSION CTA ================= -->
-
 <section class="cta">
-
-<h2>
-    Give Your Child a Strong Start
-</h2>
-
-<p>
-    Join Reliable Public School and become a part
-    of a community focused on learning and growth.
-</p>
-
-<a href="admissions.jsp" class="btn">
-    Explore Admissions
-</a>
-
-
+    <h2>Give Your Child a Strong Start</h2>
+    <p>Join Modern Life Public School and become a part of a community focused on learning and growth.</p>
+    <a href="${pageContext.request.contextPath}/admissions.jsp" class="btn">Explore Admissions</a>
 </section>
 
 <!-- ================= FOOTER ================= -->
-
 <footer>
-
-
-<div class="footer-content">
-
-
-    <div class="footer-brand">
-
-        <h2>
-            Reliable Public School
-        </h2>
-
-        <p>
-            Quality education, strong values and
-            a brighter future for every student.
-        </p>
-
+    <div class="footer-content">
+        <div class="footer-brand">
+            <h2>Modern Life Public School</h2>
+            <p>Quality education, strong values and a brighter future for every student.</p>
+        </div>
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <a href="${pageContext.request.contextPath}/index.jsp">Home</a>
+            <a href="${pageContext.request.contextPath}/about.jsp">About</a>
+            <a href="${pageContext.request.contextPath}/academics.jsp">Academics</a>
+            <a href="${pageContext.request.contextPath}/admissions.jsp">Admissions</a>
+        </div>
+        <div class="footer-column">
+            <h3>School</h3>
+            <a href="${pageContext.request.contextPath}/notice?action=public">Notices</a>
+            <a href="${pageContext.request.contextPath}/contact.jsp">Contact</a>
+            <a href="https://wa.me/918433220079?text=Hello%20Modern%20Life%20Public%20School,%20I%20want%20to%20know%20about%20admission"
+               target="_blank">
+                Apply For Admission
+            </a>
+        </div>
     </div>
-
-
-    <div class="footer-column">
-
-        <h3>
-            Quick Links
-        </h3>
-
-        <a href="${pageContext.request.contextPath}/index.jsp">
-            Home
-        </a>
-
-        <a href="${pageContext.request.contextPath}/about.jsp">
-            About
-        </a>
-
-        <a href="${pageContext.request.contextPath}/academics.jsp">
-            Academics
-        </a>
-
-        <a href="${pageContext.request.contextPath}/admissions.jsp">
-            Admissions
-        </a>
-
+    <div class="footer-bottom">
+        <p>© 2026 Modern Life Public School. All Rights Reserved.</p>
     </div>
-
-
-    <div class="footer-column">
-
-        <h3>
-            School
-        </h3>
-
-        <a href="${pageContext.request.contextPath}/notice?action=public">
-            Notices
-        </a>
-
-
-        <a href="${pageContext.request.contextPath}/contact.jsp">
-            Contact
-        </a>
-
-    </div>
-
-
-</div>
-
-
-<div class="footer-bottom">
-
-    <p>
-        © 2026 Reliable Public School. All Rights Reserved.
-    </p>
-
-</div>
-
 </footer>
 
 </body>
-
 </html>

@@ -25,7 +25,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Admin Dashboard - Reliable Public School</title>
+    <title>Admin Dashboard - Modern Life Public School</title>
 
     <link rel="preconnect"
           href="https://fonts.googleapis.com">
@@ -459,7 +459,7 @@
                 <i class="fas fa-school"></i>
             </div>
 
-            Reliable <span>Public School</span>
+            Modern Life <span>Public School</span>
 
         </div>
 
@@ -506,7 +506,7 @@
                 </h1>
 
                 <p>
-                    Welcome to Reliable Public School Management System.
+                    Welcome to Modern Life Public School Management System.
                 </p>
 
                 <div class="welcome-badge">
@@ -626,7 +626,7 @@
             </a>
 
 
-            <!-- GALLERY -->
+            <!-- GALLERY
 
             <a href="#"
                class="card">
@@ -648,7 +648,7 @@
                 </p>
 
             </a>
-
+ -->
 
             <!-- EVENTS -->
 
@@ -698,7 +698,7 @@
             </a>
 
 
-            <!-- FEES -->
+            <!-- FEES 
 
             <a href="${pageContext.request.contextPath}/fee?action=list"
                class="card">
@@ -721,7 +721,7 @@
 
             </a>
 
-
+-->
             <!-- RESULTS -->
 
             <a href="#"
@@ -812,7 +812,7 @@
     <footer>
 
         <p>
-            © 2026 Reliable Public School. All Rights Reserved.
+            © 2026 Modern Life Public School. All Rights Reserved.
         </p>
 
     </footer>

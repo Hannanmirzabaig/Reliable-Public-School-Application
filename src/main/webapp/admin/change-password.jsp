@@ -21,7 +21,7 @@
 
     <meta charset="UTF-8">
 
-    <title>Change Password - Reliable Public School</title>
+    <title>Change Password - Modern Life Public School</title>
 
     <style>
 
@@ -128,7 +128,7 @@
     <div class="navbar">
 
         <div class="school-name">
-            Reliable Public School
+            Modern Life Public School
         </div>
 
         <a href="<%= request.getContextPath() %>/admin/dashboard.jsp"

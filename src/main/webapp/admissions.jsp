@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Admissions - Reliable Public School</title>
+<title>Admissions - Modern Life Public School</title>
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
@@ -39,6 +39,11 @@ body {
     background: #ffffff;
     line-height: 1.6;
     overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
 }
 
 
@@ -101,7 +106,7 @@ body {
 header {
     background: #ffffff;
     min-height: 88px;
-    padding: 0 6%;
+    padding: 0 5%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -113,7 +118,7 @@ header {
 }
 
 
-/* ================= LOGO ================= */
+/* ================= LOGO (Same as About / Academics) ================= */
 
 .logo {
     display: flex;
@@ -121,39 +126,45 @@ header {
     gap: 12px;
     text-decoration: none;
     color: #122b4d;
+    flex-shrink: 0;
 }
 
 .logo-icon {
-    width: 52px;
-    height: 52px;
+    width: 58px;
+    height: 58px;
     border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #f1d8d9;
     background: #8b171c;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 23px;
-    font-weight: 700;
-    border: 4px solid #f1d8d9;
+    flex-shrink: 0;
+}
+
+.logo-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .logo-text {
     display: flex;
     flex-direction: column;
-    line-height: 1.1;
+    line-height: 1.15;
 }
 
 .logo-text strong {
-    font-size: 21px;
+    font-size: 20px;
     color: #8b171c;
     font-weight: 700;
+    white-space: nowrap;
 }
 
 .logo-text span {
     font-size: 11px;
     color: #777;
-    letter-spacing: 1.8px;
+    letter-spacing: 1.4px;
     text-transform: uppercase;
+    white-space: nowrap;
 }
 
 
@@ -353,29 +364,22 @@ nav > a.active::after,
 }
 
 
-/* ================= APPLY NOW ================= */
+/* ================= APPLY NOW (Same as Academics) ================= */
 
-.nav-apply {
-
-    background: #8b171c !important;
-
+.nav-admission {
+    background: #8b171c;
     color: white !important;
-
     border-radius: 4px;
-
     margin-left: 8px;
-
-    padding: 11px 20px !important;
+    padding: 10px 18px !important;
 }
 
-.nav-apply:hover {
-
-    background: #651014 !important;
+.nav-admission:hover {
+    background: #651014;
 }
 
-.nav-apply::after {
-
-    display: none !important;
+.nav-admission::after {
+    display: none;
 }
 
 
@@ -949,7 +953,7 @@ footer {
 
     color: white;
 
-    padding: 45px 6% 25px;
+    padding: 45px 5% 25px;
 }
 
 .footer-content {
@@ -1065,11 +1069,24 @@ footer {
 
         min-height: auto;
 
-        padding: 15px 5%;
+        padding: 12px 4%;
 
         flex-direction: column;
 
-        gap: 15px;
+        gap: 12px;
+    }
+
+    .logo {
+        justify-content: center;
+    }
+
+    .logo-text strong {
+        font-size: 18px;
+    }
+
+    .logo-text span {
+        font-size: 10px;
+        letter-spacing: 1px;
     }
 
     nav {
@@ -1087,9 +1104,10 @@ footer {
         font-size: 12px;
     }
 
-    .nav-apply {
+    .nav-admission {
 
         margin-left: 0;
+        margin-top: 4px;
     }
 
 
@@ -1196,7 +1214,7 @@ footer {
         <div class="marquee">
 
             <span>
-                Welcome to Reliable Public School — Quality Education • Strong Values • Bright Future
+                Welcome to Modern Life Public School — Quality Education • Strong Values • Bright Future
             </span>
 
             <span>
@@ -1204,7 +1222,7 @@ footer {
             </span>
 
             <span>
-                Join Reliable Public School and give your child a strong educational foundation
+                Join Modern Life Public School and give your child a strong educational foundation
             </span>
 
         </div>
@@ -1224,13 +1242,13 @@ footer {
    class="logo">
 
     <div class="logo-icon">
-        R
+        <img src="${pageContext.request.contextPath}/images/logo.jpeg" alt="Logo">
     </div>
 
     <div class="logo-text">
 
         <strong>
-            Reliable Public School
+            Modern Life Public School
         </strong>
 
         <span>
@@ -1281,7 +1299,7 @@ footer {
 
         <!-- APPLY FOR ADMISSION -->
 
-        <a href="https://wa.me/919211932480?text=Hello%20Reliable%20Public%20School,%20I%20want%20to%20know%20about%20admission"
+        <a href="https://wa.me/918433220079?text=Hello%20Reliable%20Public%20School,%20I%20want%20to%20know%20about%20admission"
            target="_blank">
 
             <span>
@@ -1332,10 +1350,10 @@ footer {
 </a>
 
 
-<!-- APPLY NOW -->
+<!-- APPLY NOW (Same style as Academics) -->
 
-<a class="nav-apply"
-   href="https://wa.me/919211932480?text=Hello%20Reliable%20Public%20School,%20I%20want%20to%20apply%20for%20admission"
+<a href="https://wa.me/918433220079?text=Hello%20Reliable%20Public%20School,%20I%20want%20to%20apply%20for%20admission"
+   class="nav-admission"
    target="_blank">
 
     Apply Now
@@ -1357,7 +1375,7 @@ footer {
 <div class="banner-content">
 
     <div class="banner-small">
-        Reliable Public School
+        Modern Life Public School
     </div>
 
     <h1>
@@ -1386,7 +1404,7 @@ footer {
     </div>
 
     <h2 class="section-title">
-        Welcome to Reliable Public School
+        Welcome to Modern Life Public School
     </h2>
 
     <p class="section-text">
@@ -1403,7 +1421,7 @@ footer {
 
 <p>
 
-    At Reliable Public School, we believe that admission is
+    At Modern Life Public School, we believe that admission is
     the beginning of an important journey for every child
     and family. Our aim is to make the admission process
     simple, transparent and welcoming.
@@ -1535,7 +1553,7 @@ footer {
     <p class="section-text">
 
         Follow these simple steps to begin the admission journey
-        at Reliable Public School.
+        at Modern Life Public School.
 
     </p>
 
@@ -1824,14 +1842,14 @@ footer {
 
 <p>
 
-    Contact Reliable Public School directly on WhatsApp
+    Contact Modern Life Public School directly on WhatsApp
     for admission enquiries and further information.
 
 </p>
 
 
 <a class="whatsapp-btn"
-   href="https://wa.me/919211932480?text=Hello%20Reliable%20Public%20School,%20I%20want%20to%20know%20about%20admission"
+   href="https://wa.me/918433220079?text=Hello%20Reliable%20Public%20School,%20I%20want%20to%20know%20about%20admission"
    target="_blank">
 
     <i class="fab fa-whatsapp"></i>
@@ -1857,7 +1875,7 @@ footer {
 <div class="footer-brand">
 
     <h2>
-        Reliable Public School
+        Modern Life Public School
     </h2>
 
     <p>
@@ -1913,7 +1931,7 @@ footer {
         Contact
     </a>
 
-    <a href="https://wa.me/919211932480?text=Hello%20Reliable%20Public%20School,%20I%20want%20to%20know%20about%20admission"
+    <a href="https://wa.me/918433220079?text=Hello%20Reliable%20Public%20School,%20I%20want%20to%20know%20about%20admission"
        target="_blank">
 
         Apply For Admission
@@ -1929,7 +1947,7 @@ footer {
 <div class="footer-bottom">
 
 <p>
-    © 2026 Reliable Public School. All Rights Reserved.
+    © 2026 Modern Life Public School. All Rights Reserved.
 </p>
 
 </div>
@@ -1940,4 +1958,3 @@ footer {
 </body>
 
 </html>
-

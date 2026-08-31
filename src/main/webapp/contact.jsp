@@ -8,7 +8,7 @@ pageEncoding="UTF-8"%>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Contact Us - Reliable Public School</title>
+<title>Contact Us - Modern Life Public School</title>
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
@@ -38,6 +38,11 @@ pageEncoding="UTF-8"%>
         background: #ffffff;
         line-height: 1.6;
         overflow-x: hidden;
+    }
+
+    img {
+        max-width: 100%;
+        display: block;
     }
 
     /* ================= TOP NOTICE BAR ================= */
@@ -98,7 +103,7 @@ pageEncoding="UTF-8"%>
     header {
         background: #ffffff;
         min-height: 88px;
-        padding: 0 6%;
+        padding: 0 5%;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -109,7 +114,7 @@ pageEncoding="UTF-8"%>
         box-shadow: 0 3px 15px rgba(0,0,0,.07);
     }
 
-    /* ================= LOGO ================= */
+    /* ================= LOGO (Same as other pages) ================= */
 
     .logo {
         display: flex;
@@ -117,39 +122,45 @@ pageEncoding="UTF-8"%>
         gap: 12px;
         text-decoration: none;
         color: #122b4d;
+        flex-shrink: 0;
     }
 
     .logo-icon {
-        width: 52px;
-        height: 52px;
+        width: 58px;
+        height: 58px;
         border-radius: 50%;
+        overflow: hidden;
+        border: 3px solid #f1d8d9;
         background: #8b171c;
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 23px;
-        font-weight: 700;
-        border: 4px solid #f1d8d9;
+        flex-shrink: 0;
+    }
+
+    .logo-icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
     }
 
     .logo-text {
         display: flex;
         flex-direction: column;
-        line-height: 1.1;
+        line-height: 1.15;
     }
 
     .logo-text strong {
-        font-size: 21px;
+        font-size: 20px;
         color: #8b171c;
         font-weight: 700;
+        white-space: nowrap;
     }
 
     .logo-text span {
         font-size: 11px;
         color: #777;
-        letter-spacing: 1.8px;
+        letter-spacing: 1.4px;
         text-transform: uppercase;
+        white-space: nowrap;
     }
 
     /* ================= NAVIGATION ================= */
@@ -588,7 +599,7 @@ pageEncoding="UTF-8"%>
     footer {
         background: #0c1d31;
         color: white;
-        padding: 45px 6% 25px;
+        padding: 45px 5% 25px;
     }
 
     .footer-content {
@@ -663,9 +674,22 @@ pageEncoding="UTF-8"%>
 
         header {
             min-height: auto;
-            padding: 15px 5%;
+            padding: 12px 4%;
             flex-direction: column;
-            gap: 15px;
+            gap: 12px;
+        }
+
+        .logo {
+            justify-content: center;
+        }
+
+        .logo-text strong {
+            font-size: 18px;
+        }
+
+        .logo-text span {
+            font-size: 10px;
+            letter-spacing: 1px;
         }
 
         nav {
@@ -747,7 +771,7 @@ pageEncoding="UTF-8"%>
     <div class="marquee">
 
         <span>
-            Welcome to Reliable Public School — Quality Education • Strong Values • Bright Future
+            Welcome to Modern Life Public School — Quality Education • Strong Values • Bright Future
         </span>
 
         <span>
@@ -755,7 +779,7 @@ pageEncoding="UTF-8"%>
         </span>
 
         <span>
-            Join Reliable Public School and give your child a strong educational foundation
+            Join Modern Life Public School and give your child a strong educational foundation
         </span>
 
     </div>
@@ -772,13 +796,13 @@ pageEncoding="UTF-8"%>
    class="logo">
 
     <div class="logo-icon">
-        R
+        <img src="${pageContext.request.contextPath}/images/logo.jpeg" alt="Logo">
     </div>
 
     <div class="logo-text">
 
         <strong>
-            Reliable Public School
+            Modern Life Public School
         </strong>
 
         <span>
@@ -824,7 +848,7 @@ pageEncoding="UTF-8"%>
                  WhatsApp icon intentionally removed -->
 
             <a class="apply-admission"
-               href="https://wa.me/916399883478?text=Hello%20Reliable%20Public%20School,%20I%20want%20to%20know%20about%20admission."
+               href="https://wa.me/918433220079?text=Hello%20Modern%20Life%20Public%20School,%20I%20want%20to%20know%20about%20admission."
                target="_blank">
 
                 <span>
@@ -875,7 +899,7 @@ pageEncoding="UTF-8"%>
     <!-- APPLY NOW -->
 
     <a class="nav-apply"
-       href="https://wa.me/916399883478?text=Hello%20Reliable%20Public%20School,%20I%20want%20to%20apply%20for%20admission."
+       href="https://wa.me/918433220079?text=Hello%20Modern%20Life%20Public%20School,%20I%20want%20to%20apply%20for%20admission."
        target="_blank">
 
         Apply Now
@@ -895,7 +919,7 @@ pageEncoding="UTF-8"%>
 <div class="banner-content">
 
     <div class="banner-small">
-        Reliable Public School
+        Modern Life Public School
     </div>
 
     <h1>
@@ -923,7 +947,7 @@ pageEncoding="UTF-8"%>
     </div>
 
     <h2 class="section-title">
-        Contact Reliable Public School
+        Contact Modern Life Public School
     </h2>
 
     <p class="section-text">
@@ -968,7 +992,7 @@ pageEncoding="UTF-8"%>
 
         <p>
 
-            Reliable Public School<br>
+            Modern Life Public School<br>
 
             Kasba Jhalu<br>
 
@@ -995,8 +1019,8 @@ pageEncoding="UTF-8"%>
 
         <p>
 
-            <a href="tel:+916399883478">
-                +91 63998 83478
+            <a href="tel:+918433220079">
+                +91 84332 20079
             </a>
 
         </p>
@@ -1020,8 +1044,8 @@ pageEncoding="UTF-8"%>
 
         <p>
 
-            <a href="mailto:info@reliablepublicschool.com">
-                info@reliablepublicschool.com
+            <a href="mailto:info@modernlifepublicschool.com">
+                info@modernlifepublicschool.com
             </a>
 
         </p>
@@ -1047,7 +1071,7 @@ pageEncoding="UTF-8"%>
             Chat with us instantly
         </p>
 
-        <a href="https://wa.me/916399883478"
+        <a href="https://wa.me/918433220079"
            target="_blank"
            class="whatsapp-btn">
 
@@ -1113,7 +1137,7 @@ pageEncoding="UTF-8"%>
 
     <!-- EMAIL -->
 
-    <a href="mailto:info@reliablepublicschool.com"
+    <a href="mailto:info@modernlifepublicschool.com"
        class="social-icon email"
        title="Email">
 
@@ -1124,7 +1148,7 @@ pageEncoding="UTF-8"%>
 
     <!-- WHATSAPP -->
 
-    <a href="https://wa.me/916399883478"
+    <a href="https://wa.me/918433220079"
        target="_blank"
        class="social-icon whatsapp-social"
        title="WhatsApp">
@@ -1153,7 +1177,7 @@ pageEncoding="UTF-8"%>
     </h2>
 
     <p class="section-text">
-        Visit Reliable Public School at Kasba Jhalu, Bijnor, Uttar Pradesh.
+        Visit Modern Life Public School at Kasba Jhalu, Bijnor, Uttar Pradesh.
     </p>
 
 </div>
@@ -1190,7 +1214,7 @@ pageEncoding="UTF-8"%>
     <div class="footer-brand">
 
         <h2>
-            Reliable Public School
+            Modern Life Public School
         </h2>
 
         <p>
@@ -1240,13 +1264,13 @@ pageEncoding="UTF-8"%>
             Notices
         </a>
 
-    
+
 
         <a href="${pageContext.request.contextPath}/contact.jsp">
             Contact
         </a>
 
-        <a href="https://wa.me/919211932580?text=Hello%20Reliable%20Public%20School,%20I%20want%20to%20know%20about%20admission."
+        <a href="https://wa.me/918433220079?text=Hello%20Modern%20Life%20Public%20School,%20I%20want%20to%20know%20about%20admission."
            target="_blank">
 
             Apply For Admission
@@ -1261,7 +1285,7 @@ pageEncoding="UTF-8"%>
 <div class="footer-bottom">
 
     <p>
-        © 2026 Reliable Public School. All Rights Reserved.
+        © 2026 Modern Life Public School. All Rights Reserved.
     </p>
 
 </div>

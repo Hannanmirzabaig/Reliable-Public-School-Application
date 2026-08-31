@@ -12,7 +12,7 @@
 <meta name="viewport"
       content="width=device-width, initial-scale=1.0">
 
-<title>Add Teacher - Reliable Public School</title>
+<title>Add Teacher - Modern Life Public School</title>
 
 <link rel="preconnect"
       href="https://fonts.googleapis.com">
@@ -405,7 +405,7 @@ footer p {
 
         </div>
 
-        Reliable <span>Public School</span>
+        Modern Life <span>Public School</span>
 
     </div>
 
@@ -647,7 +647,7 @@ footer p {
 <footer>
 
     <p>
-        © 2026 Reliable Public School. All Rights Reserved.
+        © 2026 Modern Life Public School. All Rights Reserved.
     </p>
 
 </footer>

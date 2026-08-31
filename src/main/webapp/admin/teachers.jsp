@@ -12,7 +12,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Teacher Management - Reliable Public School</title>
+<title>Teacher Management - Modern Life Public School</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -468,7 +468,7 @@ footer p {
             <i class="fas fa-school"></i>
         </div>
 
-        Reliable <span>Public School</span>
+        Modern Life <span>Public School</span>
 
     </div>
 
@@ -822,7 +822,7 @@ if (teachers != null && !teachers.isEmpty()) {
 <footer>
 
     <p>
-        © 2026 Reliable Public School. All Rights Reserved.
+        © 2026 Modern Life Public School. All Rights Reserved.
     </p>
 
 </footer>

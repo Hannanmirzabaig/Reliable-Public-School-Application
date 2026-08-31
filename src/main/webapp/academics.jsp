@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Academics - Reliable Public School</title>
+<title>Academics - Modern Life Public School</title>
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
@@ -104,8 +104,8 @@ img {
 
 header {
     background: #ffffff;
-    height: 88px;
-    padding: 0 6%;
+    min-height: 88px;
+    padding: 0 5%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -125,39 +125,45 @@ header {
     gap: 12px;
     text-decoration: none;
     color: #122b4d;
+    flex-shrink: 0;
 }
 
 .logo-icon {
-    width: 52px;
-    height: 52px;
+    width: 58px;
+    height: 58px;
     border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #f1d8d9;
     background: #8b171c;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 23px;
-    font-weight: 700;
-    border: 4px solid #f1d8d9;
+    flex-shrink: 0;
+}
+
+.logo-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .logo-text {
     display: flex;
     flex-direction: column;
-    line-height: 1.1;
+    line-height: 1.15;
 }
 
 .logo-text strong {
-    font-size: 21px;
+    font-size: 20px;
     color: #8b171c;
     font-weight: 700;
+    white-space: nowrap;
 }
 
 .logo-text span {
     font-size: 11px;
     color: #777;
-    letter-spacing: 1.8px;
+    letter-spacing: 1.4px;
     text-transform: uppercase;
+    white-space: nowrap;
 }
 
 
@@ -169,7 +175,8 @@ nav {
     gap: 3px;
 }
 
-nav a {
+nav > a,
+.dropdown > .dropbtn {
     color: #333;
     text-decoration: none;
     padding: 11px 15px;
@@ -177,9 +184,14 @@ nav a {
     font-weight: 500;
     transition: .3s;
     position: relative;
+    background: transparent;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
 }
 
-nav a::after {
+nav > a::after,
+.dropdown > .dropbtn::after {
     content: "";
     position: absolute;
     bottom: 3px;
@@ -190,36 +202,106 @@ nav a::after {
     transition: .3s;
 }
 
-nav a:hover {
+nav > a:hover,
+.dropdown:hover > .dropbtn {
     color: #8b171c;
 }
 
-nav a:hover::after {
+nav > a:hover::after,
+.dropdown:hover > .dropbtn::after {
     width: calc(100% - 30px);
 }
 
-nav a.active {
+nav > a.active,
+.dropdown > .dropbtn.active {
     color: #8b171c;
 }
 
-nav a.active::after {
+nav > a.active::after,
+.dropdown > .dropbtn.active::after {
     width: calc(100% - 30px);
 }
 
-.nav-admission {
-    background: #8b171c;
+/* ================= ADMISSIONS DROPDOWN ================= */
+
+.dropdown {
+    position: relative;
+}
+
+.dropbtn i {
+    font-size: 11px;
+    margin-left: 5px;
+    transition: .3s;
+}
+
+.dropdown:hover .dropbtn i {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    min-width: 235px;
+    background: white;
+    border-top: 3px solid #8b171c;
+    box-shadow: 0 12px 30px rgba(0,0,0,.15);
+    border-radius: 0 0 5px 5px;
+    padding: 8px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: .25s ease;
+    z-index: 2000;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu a {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    color: #333;
+    text-decoration: none;
+    padding: 12px 18px;
+    font-size: 13.5px;
+    font-weight: 500;
+    transition: .25s;
+    white-space: nowrap;
+}
+
+.dropdown-menu a i {
+    width: 18px;
+    color: #8b171c;
+    font-size: 14px;
+}
+
+.dropdown-menu a:hover {
+    background: #f8eeee;
+    color: #8b171c;
+    padding-left: 23px;
+}
+
+/* ================= APPLY NOW ================= */
+
+.nav-apply {
+    background: #8b171c !important;
     color: white !important;
     border-radius: 4px;
     margin-left: 8px;
-    padding: 11px 20px;
+    padding: 11px 20px !important;
 }
 
-.nav-admission:hover {
-    background: #651014;
+.nav-apply:hover {
+    background: #651014 !important;
 }
 
-.nav-admission::after {
-    display: none;
+.nav-apply::after {
+    display: none !important;
 }
 
 
@@ -631,7 +713,7 @@ nav a.active::after {
 footer {
     background: #0c1d31;
     color: white;
-    padding: 45px 6% 25px;
+    padding: 45px 5% 25px;
 }
 
 .footer-content {
@@ -666,10 +748,12 @@ footer {
     text-decoration: none;
     font-size: 14px;
     margin-bottom: 8px;
+    transition: .3s;
 }
 
 .footer-column a:hover {
     color: white;
+    padding-left: 4px;
 }
 
 .footer-bottom {
@@ -687,11 +771,8 @@ footer {
 
 @media(max-width: 1000px) {
 
-    nav {
-        gap: 0;
-    }
-
-    nav a {
+    nav > a,
+    .dropdown > .dropbtn {
         padding: 9px 8px;
         font-size: 12px;
     }
@@ -713,10 +794,23 @@ footer {
     }
 
     header {
-        height: auto;
-        padding: 15px 5%;
+        min-height: auto;
+        padding: 12px 4%;
         flex-direction: column;
-        gap: 15px;
+        gap: 12px;
+    }
+
+    .logo {
+        justify-content: center;
+    }
+
+    .logo-text strong {
+        font-size: 18px;
+    }
+
+    .logo-text span {
+        font-size: 10px;
+        letter-spacing: 1px;
     }
 
     nav {
@@ -724,13 +818,29 @@ footer {
         justify-content: center;
     }
 
-    nav a {
+    nav > a,
+    .dropdown > .dropbtn {
         padding: 7px 8px;
         font-size: 12px;
     }
 
-    .nav-admission {
+    .nav-apply {
         margin-left: 0;
+    }
+
+    .dropdown {
+        position: static;
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 8px);
+        min-width: 220px;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        transform: translate(-50%, 0);
     }
 
     .page-banner {
@@ -807,7 +917,7 @@ footer {
         <div class="marquee">
 
             <span>
-                Welcome to Reliable Public School — Quality Education • Strong Values • Bright Future
+                Welcome to Modern Life Public School — Quality Education • Strong Values • Bright Future
             </span>
 
             <span>
@@ -815,7 +925,7 @@ footer {
             </span>
 
             <span>
-                Stay connected with Reliable Public School for latest notices and updates
+                Stay connected with Modern Life Public School for latest notices and updates
             </span>
 
         </div>
@@ -829,27 +939,15 @@ footer {
 
 <header>
 
-    <a href="${pageContext.request.contextPath}/index.jsp"
-       class="logo">
-
+    <a href="${pageContext.request.contextPath}/index.jsp" class="logo">
         <div class="logo-icon">
-            R
+            <img src="${pageContext.request.contextPath}/images/logo.jpeg" alt="Logo">
         </div>
-
         <div class="logo-text">
-
-            <strong>
-                Reliable Public School
-            </strong>
-
-            <span>
-                Education • Excellence • Values
-            </span>
-
+            <strong>Modern Life Public School</strong>
+            <span>Education • Excellence • Values</span>
         </div>
-
     </a>
-
 
     <nav>
 
@@ -866,22 +964,46 @@ footer {
             Academics
         </a>
 
-        <a href="${pageContext.request.contextPath}/admissions.jsp">
-            Admissions
-        </a>
+        <div class="dropdown">
+
+            <button class="dropbtn">
+                Admissions
+                <i class="fas fa-chevron-down"></i>
+            </button>
+
+            <div class="dropdown-menu">
+
+                <a href="https://wa.me/918433220079?text=Hello%20Modern%20Life%20Public%20School,%20I%20want%20to%20know%20about%20admission"
+                   target="_blank">
+                    <i class="fas fa-paper-plane"></i>
+                    <span>Apply For Admission</span>
+                </a>
+
+                <a href="${pageContext.request.contextPath}/admissions.jsp#process">
+                    <i class="fas fa-list-check"></i>
+                    <span>Admission Process</span>
+                </a>
+
+                <a href="${pageContext.request.contextPath}/admissions.jsp#scholarships">
+                    <i class="fas fa-award"></i>
+                    <span>Scholarships</span>
+                </a>
+
+            </div>
+
+        </div>
 
         <a href="${pageContext.request.contextPath}/notice?action=public">
             Notice
         </a>
 
-       
-
         <a href="${pageContext.request.contextPath}/contact.jsp">
             Contact
         </a>
 
-        <a href="${pageContext.request.contextPath}/admissions.jsp"
-           class="nav-admission">
+        <a class="nav-apply"
+           href="https://wa.me/918433220079?text=Hello%20Modern%20Life%20Public%20School,%20I%20want%20to%20apply%20for%20admission"
+           target="_blank">
             Apply Now
         </a>
 
@@ -897,7 +1019,7 @@ footer {
     <div class="banner-content">
 
         <div class="banner-small">
-            Reliable Public School
+            Modern Life Public School
         </div>
 
         <h1>
@@ -922,7 +1044,7 @@ footer {
 
     <p class="intro">
 
-        At Reliable Public School, academics are designed to provide
+        At Modern Life Public School, academics are designed to provide
         students with strong foundations, meaningful learning
         experiences and the confidence to face the future.
 
@@ -1285,7 +1407,7 @@ footer {
         </h2>
 
         <p>
-            At Reliable Public School, success is not measured only
+            At Modern Life Public School, success is not measured only
             by marks and examinations. We aim to develop students who
             are confident learners, thoughtful individuals and
             responsible members of society. Through strong academics,
@@ -1309,7 +1431,7 @@ footer {
     </h2>
 
     <p>
-        Join Reliable Public School and become a part of a community
+        Join Modern Life Public School and become a part of a community
         focused on learning, values and growth.
     </p>
 
@@ -1331,7 +1453,7 @@ footer {
         <div class="footer-brand">
 
             <h2>
-                Reliable Public School
+                Modern Life Public School
             </h2>
 
             <p>
@@ -1377,10 +1499,13 @@ footer {
                 Notices
             </a>
 
-            
-
             <a href="${pageContext.request.contextPath}/contact.jsp">
                 Contact
+            </a>
+
+            <a href="https://wa.me/918433220079?text=Hello%20Modern%20Life%20Public%20School,%20I%20want%20to%20know%20about%20admission"
+               target="_blank">
+                Apply For Admission
             </a>
 
         </div>
@@ -1388,11 +1513,10 @@ footer {
 
     </div>
 
-
     <div class="footer-bottom">
 
         <p>
-            © 2026 Reliable Public School. All Rights Reserved.
+            © 2026 Modern Life Public School. All Rights Reserved.
         </p>
 
     </div>

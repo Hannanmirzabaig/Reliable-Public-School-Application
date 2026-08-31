@@ -9,13 +9,12 @@ pageEncoding="UTF-8"%>
 
 <head>
 
-```
 <meta charset="UTF-8">
 
 <meta name="viewport"
       content="width=device-width, initial-scale=1.0">
 
-<title>Edit Fee - Reliable Public School</title>
+<title>Edit Fee - Modern Life Public SchoolModern Life Public School</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet">
@@ -205,7 +204,7 @@ pageEncoding="UTF-8"%>
     }
 
 </style>
-```
+
 
 </head>
 
@@ -222,9 +221,9 @@ String error =
 
 <header>
 
-```
+
 <div class="logo">
-    Reliable <span>Public School</span>
+    Modern Life <span>Public School</span>
 </div>
 
 <div class="admin-badge">
@@ -234,13 +233,13 @@ String error =
     Admin Panel
 
 </div>
-```
+
 
 </header>
 
 <div class="container">
 
-```
+
 <div class="card">
 
     <div class="title">
@@ -402,17 +401,16 @@ String error =
     <% } %>
 
 </div>
-```
+
 
 </div>
 
 <footer>
 
-```
 <p>
-    © 2026 Reliable Public School. All Rights Reserved.
+    © 2026 Modern Life Public School. All Rights Reserved.
 </p>
-```
+
 
 </footer>
 

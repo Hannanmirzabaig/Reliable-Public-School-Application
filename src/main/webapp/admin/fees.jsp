@@ -9,7 +9,7 @@
 
     <meta charset="UTF-8">
 
-    <title>Manage Fees - Reliable Public School</title>
+    <title>Manage Fees - Modern Life Public School</title>
 
     <style>
 
@@ -232,7 +232,7 @@
 <header>
 
     <div class="logo">
-        Reliable Public School
+        Modern Life Public School
     </div>
 
     <a href="${pageContext.request.contextPath}/admin/dashboard.jsp"

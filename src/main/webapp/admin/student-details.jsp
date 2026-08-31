@@ -10,7 +10,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Student Details - Reliable Public School</title>
+<title>Student Details - Modern Life Public School</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet">
@@ -446,7 +446,7 @@ footer p {
 <header>
 
     <div class="logo">
-        Reliable <span>Public School</span>
+        Modern Life <span>Public School</span>
     </div>
 
     <div class="header-right">
@@ -643,7 +643,7 @@ footer p {
 <footer>
 
     <p>
-        © 2026 Reliable Public School. All Rights Reserved.
+        © 2026 Modern Life Public School. All Rights Reserved.
     </p>
 
 </footer>

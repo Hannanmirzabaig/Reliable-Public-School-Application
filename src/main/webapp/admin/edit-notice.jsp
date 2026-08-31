@@ -7,7 +7,7 @@
 
 <meta charset="UTF-8">
 
-<title>Edit Notice - Reliable Public School</title>
+<title>Edit Notice - Modern Life Public School</title>
 
 <style>
 
@@ -161,7 +161,7 @@ textarea:focus {
 <header>
 
     <div class="logo">
-        Reliable Public School
+        Modern Life Public School
     </div>
 
     <div class="admin">

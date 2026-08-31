@@ -9,7 +9,7 @@
 
     <meta charset="UTF-8">
 
-    <title>Edit Teacher - Reliable Public School</title>
+    <title>Edit Teacher - Modern Life Public School</title>
 
     <style>
 

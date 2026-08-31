@@ -9,7 +9,7 @@
 
     <meta charset="UTF-8">
 
-    <title>Reset Password - Reliable Public School</title>
+    <title>Reset Password - Modern Life Public School</title>
 
     <style>
 
@@ -172,7 +172,7 @@
 
         <div class="logo">
 
-            <h1>Reliable Public School</h1>
+            <h1>Modern Life Public School</h1>
 
             <p>School Management System</p>
 
